@@ -1,9 +1,6 @@
 <app-current-location />
-@if(hoursData()) {
-<app-temperature
-    [temperatures]="hoursData()!.temperature"
-    [dates]="hoursData()!.time"
-/>
-} @if(weekData()) {
-<app-predictions [predictions]="weekData()" />
+@if(hoursData(); as hours) {
+<app-temperature [temperatures]="hours.temperature" />
+} @if(weekData(); as week) {
+<app-predictions [predictions]="week" />
 }

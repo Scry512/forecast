@@ -11,16 +11,11 @@ export interface DayData {
   weatherCode: number;
   sunrise: string;
   sunset: string;
+  image: string;
+  description: string;
 }
 
-export interface WeekData {
-  minArray: number[];
-  maxArray: number[];
-  weekArray: string[];
-  weatherCodeArray: number[];
-  sunriseArray: string[];
-  sunsetArray: string[];
-}
+export interface WeekData extends Array<DayData> {}
 
 export interface WeatherAPIResponse {
   daily: {

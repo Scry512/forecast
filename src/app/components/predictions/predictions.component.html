@@ -6,10 +6,13 @@
             <p>Maximum Temperature</p>
             <p>Minimum Temperature</p>
         </li>
-        @for(prediction of formatedPredictions(); track prediction.date) {
+        @for(prediction of predictions(); track $index) {
         <li>
-            <p>{{ prediction.date | date : "EEE" }}</p>
-            <img [src]="weatherService.fetchWMOImage(prediction.src) | async" />
+            <p>{{ prediction.day | date : "EEE" }}</p>
+            <img
+                [src]="prediction.image"
+                [alt]="prediction.description"
+            />
             <p id="maxTempItem">{{ prediction.max }}º</p>
             <p id="minTempItem">{{ prediction.min }}º</p>
         </li>

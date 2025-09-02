@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   computed,
   input,
@@ -12,13 +11,8 @@ import {
   styleUrl: './temperature.component.css',
 })
 export class TemperatureComponent {
-  public temperatures = input.required<number[]>();
-  public dates = input.required<string[]>();
-  public currentTemperature = computed(() => {
-    const dates = this.dates();
-    const temps = this.temperatures();
-    if (!dates || !temps) return;
-    const currentHour = new Date().getUTCHours();
-    return temps[currentHour];
+  public readonly temperatures = input.required<number[]>();
+  public readonly currentTemperature = computed(() => {
+    return this.temperatures()[new Date().getUTCHours()];
   });
 }
