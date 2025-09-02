@@ -1,0 +1,4 @@
+Tendrían que ser otras dos APIs, pero sinceramente, no quiero usar 3 APIs de terceros.
+
+Más carga para el navegador, pero siendo la app que es (y que la hago para aprender), 
+prefiero dejarlo así en aras de la simplicidad, en una app real estos JSON son más lentos.

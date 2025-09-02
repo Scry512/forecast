@@ -1,0 +1,9 @@
+<app-current-location />
+@if(hoursData()) {
+<app-temperature
+    [temperatures]="hoursData()!.temperature"
+    [dates]="hoursData()!.time"
+/>
+} @if(weekData()) {
+<app-predictions [predictions]="weekData()" />
+}

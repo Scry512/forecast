@@ -1,0 +1,18 @@
+<div>
+    <ul>
+        <li>
+            <p>Day of the Week</p>
+            <p>Descriptive Icon</p>
+            <p>Maximum Temperature</p>
+            <p>Minimum Temperature</p>
+        </li>
+        @for(prediction of formatedPredictions(); track prediction.date) {
+        <li>
+            <p>{{ prediction.date | date : "EEE" }}</p>
+            <img [src]="weatherService.fetchWMOImage(prediction.src) | async" />
+            <p id="maxTempItem">{{ prediction.max }}º</p>
+            <p id="minTempItem">{{ prediction.min }}º</p>
+        </li>
+        }
+    </ul>
+</div>

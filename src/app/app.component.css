@@ -1,0 +1,19 @@
+:host {
+    background-color: #e5e5f7;
+    background-color: #3f3f3f;
+    opacity: 1;
+    background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 4px,
+        #3f3f3f 4px,
+        #3f3f3f 8px
+    );
+    box-shadow: #000000 0em 2em 3em;
+    margin-inline: 8em;
+    transform: scale(0.8);
+    display: grid;
+    row-gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.25fr;
+}
